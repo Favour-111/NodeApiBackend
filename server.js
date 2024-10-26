@@ -3,13 +3,13 @@ const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const route = require("./Routes/route");
-
+const cors = require("cors");
 dotenv.config();
 const Port = process.env.Port;
 
 app.use(express.json());
+app.use(cors());
 app.use(route);
-
 mongoose
   .connect(
     "mongodb+srv://omojolaobaloluwa:obalolu1976@cluster0.q9yj9ht.mongodb.net/Seunstore",
